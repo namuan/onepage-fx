@@ -2,7 +2,6 @@ package com.github.namuan.onepagefx
 
 import javafx.fxml.FXML
 import javafx.scene.control.TextArea
-import javafx.scene.input.KeyEvent
 import java.io.File
 
 class MainController {
@@ -21,7 +20,7 @@ class MainController {
         }
     }
 
-    fun onKeyPressed(keyEvent: KeyEvent) {
+    fun onKeyPressed() {
         val notes = notesTextArea.text
         file.writeText(notes)
     }

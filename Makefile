@@ -8,3 +8,6 @@ help:
 
 run: ## Build and Run application
 	./mvnw clean javafx:run
+
+package: ## Package application
+	./mvnw clean javafx:jlink

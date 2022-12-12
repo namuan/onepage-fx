@@ -17,6 +17,9 @@ class MainController {
 
         if (file.exists()) {
             notesTextArea.text = file.readText()
+
+            // place cursor at the end of the text
+            notesTextArea.positionCaret(notesTextArea.text.length)
         }
     }
 

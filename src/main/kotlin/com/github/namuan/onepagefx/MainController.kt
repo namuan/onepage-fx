@@ -15,7 +15,6 @@ class MainController {
     fun initialize() {
         file.parentFile.mkdirs()
 
-        // load notes from file
         if (file.exists()) {
             notesTextArea.text = file.readText()
         }

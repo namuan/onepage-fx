@@ -16,8 +16,8 @@ MAIN_CLASS=${PACKAGE_IDENTIFIER}.MainApplicationKt
 VENDOR="DeskRiders"
 COPYRIGHT_MESSAGE="Copyright © 2022-23 DeskRiders"
 
-# Set desired installer type: "dmg", "pkg".
-INSTALLER_TYPE=dmg
+# Set desired installer type: "app-image", "dmg", "pkg".
+INSTALLER_TYPE=app-image
 
 echo "java home: $JAVA_HOME"
 echo "project version: $PROJECT_VERSION"
@@ -34,7 +34,7 @@ cp target/${MAIN_JAR} target/installer/input/libs/
 echo "Creating installer of type $INSTALLER_TYPE"
 
 $JAVA_HOME/bin/jpackage \
-  --type dmg \
+  --type ${INSTALLER_TYPE} \
   --dest target/installer \
   --input target/installer/input/libs \
   --name ${APPLICATION_NAME} \

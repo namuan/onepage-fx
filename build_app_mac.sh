@@ -11,9 +11,10 @@
 
 MAIN_JAR="onepage-fx-$PROJECT_VERSION.jar"
 APPLICATION_NAME=OnePageFx
-MAIN_CLASS=com.github.namuan.onepagefx.MainApplicationKt
+PACKAGE_IDENTIFIER=com.github.namuan.onepagefx
+MAIN_CLASS=${PACKAGE_IDENTIFIER}.MainApplicationKt
 VENDOR="DeskRiders"
-PACKAGE_NAME=OnePageFx
+COPYRIGHT_MESSAGE="Copyright © 2022-23 DeskRiders"
 
 # Set desired installer type: "dmg", "pkg".
 INSTALLER_TYPE=dmg
@@ -24,12 +25,6 @@ echo "app version: $APP_VERSION"
 echo "main JAR file: $MAIN_JAR"
 
 # ------ SETUP DIRECTORIES AND FILES ----------------------------------------
-# Remove previously generated java runtime and installers. Copy all required
-# jar files into the input/libs folder.
-
-rm -rfd ./target/java-runtime/
-rm -rfd target/installer/
-
 mkdir -vp target/installer/input/libs/
 
 cp -R target/app/lib/* target/installer/input/libs/
@@ -42,14 +37,14 @@ $JAVA_HOME/bin/jpackage \
   --type dmg \
   --dest target/installer \
   --input target/installer/input/libs \
-  --name OnePageFx \
-  --main-class com.github.namuan.onepagefx.MainApplicationKt \
-  --main-jar onepage-fx-1.0-SNAPSHOT.jar \
+  --name ${APPLICATION_NAME} \
+  --main-class ${MAIN_CLASS} \
+  --main-jar ${MAIN_JAR} \
   --java-options -Xmx2048m \
   --runtime-image target/app \
   --icon src/main/resources/app.icns \
   --app-version 1.0.0 \
-  --vendor "DeskRiders" \
-  --copyright "Copyright © 2022-23 DeskRiders" \
-  --mac-package-identifier com.github.namuan.onepagefx \
-  --mac-package-name DeskRiders
+  --vendor ${VENDOR} \
+  --copyright "${COPYRIGHT_MESSAGE}" \
+  --mac-package-identifier ${PACKAGE_IDENTIFIER} \
+  --mac-package-name ${APPLICATION_NAME}

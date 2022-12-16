@@ -9,8 +9,8 @@ help:
 clean: ## Clean target directory
 	./mvnw clean
 
-run: clean ## Build and Run application
+run: ## Build and Run application
 	./mvnw javafx:run
 
-install: clean ## Package and install application
+install: ## Package and install application
 	./mvnw package javafx:jlink install

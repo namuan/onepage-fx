@@ -32,3 +32,9 @@ You can just run `make` to display list of available commands.
 ```shell
 make
 ```
+
+### Packaging
+
+```shell
+make install
+```

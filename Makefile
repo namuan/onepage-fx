@@ -6,8 +6,11 @@
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-run: ## Build and Run application
-	./mvnw clean javafx:run
+clean: ## Clean target directory
+	./mvnw clean
 
-package: ## Package application
-	./mvnw clean javafx:jlink
+run: clean ## Build and Run application
+	./mvnw javafx:run
+
+install: clean ## Package and install application
+	./mvnw package javafx:jlink install

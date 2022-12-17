@@ -17,7 +17,7 @@ VENDOR="DeskRiders"
 COPYRIGHT_MESSAGE="Copyright © 2022-23 DeskRiders"
 
 # Set desired installer type: "app-image", "dmg", "pkg".
-INSTALLER_TYPE=app-image
+INSTALLER_TYPE=dmg
 
 echo "java home: $JAVA_HOME"
 echo "project version: $PROJECT_VERSION"

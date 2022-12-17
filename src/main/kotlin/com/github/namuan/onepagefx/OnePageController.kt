@@ -4,7 +4,7 @@ import javafx.fxml.FXML
 import javafx.scene.control.TextArea
 import java.io.File
 
-class MainController {
+class OnePageController {
     private val applicationDirectory: String = System.getProperty("user.home") + "/.onepagefx"
     private val file: File = File(applicationDirectory, "notes.txt")
 

@@ -1,0 +1,30 @@
+{
+  "bin": {
+    "sample2-1-0-0": "jdeploy-bundle/jdeploy.js"
+  },
+  "author": "",
+  "description": "Parent for JavaFX starter project",
+  "main": "index.js",
+  "preferGlobal": true,
+  "repository": "https://github.com/namuan/onepage-fx",
+  "version": "0.1.0",
+  "jdeploy": {
+    "jdk": false,
+    "javaVersion": "17",
+    "jar": "target/onepage-fx-0.1.0.jar",
+    "javafx": true,
+    "title": "onepage-fx"
+  },
+  "dependencies": {
+    "njre": "^0.2.0",
+    "shelljs": "^0.8.4"
+  },
+  "license": "ISC",
+  "name": "onepage-fx",
+  "files": [
+    "jdeploy-bundle"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

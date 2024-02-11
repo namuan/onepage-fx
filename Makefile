@@ -12,5 +12,5 @@ clean: ## Clean target directory
 run: ## Build and Run application
 	./mvnw javafx:run
 
-install: ## Package and install application
-	./mvnw package javafx:jlink install
+install: clean ## Package and install application
+	./mvnw package -Ppackage
